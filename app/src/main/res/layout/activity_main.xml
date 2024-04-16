@@ -1,100 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-=======
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> 2--pantalla-de-inicio-sesión
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:background="#68A80D">
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:srcCompat="@drawable/poster"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-
-    <View
-        android:id="@+id/topBorder"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#68A80D"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <View
-        android:id="@+id/bottomBorder"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#68A80D"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="645dp"
-        android:background="@drawable/botovalo"
-        android:text="BIENVENID@"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/topBorder"
-        app:layout_constraintStart_toStartOf="@+id/topBorder"
-        app:layout_constraintTop_toTopOf="@+id/topBorder" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#034E06" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="668dp">
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="482dp"
-                android:layout_height="740dp"
-                android:backgroundTint="#0E4C10"
-                app:srcCompat="@drawable/fndpi"
-                tools:layout_editor_absoluteX="-36dp"
-                tools:layout_editor_absoluteY="-36dp" />
-
-            <include
-                android:id="@+id/include"
-                layout="@layout/content_main"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="63dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        android:layout_height="wrap_content">
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ExtraText">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="482dp"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
+        android:backgroundTint="#0E4C10"
+        app:srcCompat="@drawable/fndpi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/content_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageView6"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
->>>>>>> 2--pantalla-de-inicio-sesión
