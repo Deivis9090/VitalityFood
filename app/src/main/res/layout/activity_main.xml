@@ -45,7 +45,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="645dp"
         android:background="@drawable/botovalo"
-        android:text="BIENVENID@"
+        android:text="INICIAR APP"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/topBorder"
         app:layout_constraintStart_toStartOf="@+id/topBorder"

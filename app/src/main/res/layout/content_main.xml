@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:background="#68A80D">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="382dp"
+            android:layout_height="740dp"
+            android:backgroundTint="#0E4C10"
+            app:srcCompat="@drawable/fndpi"
+            tools:layout_editor_absoluteX="-36dp"
+            tools:layout_editor_absoluteY="-36dp" />
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#CCC26B"
+            android:backgroundTintMode="add"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="99dp"
+            android:layout_marginTop="184dp" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#CCC26B"
+            android:backgroundTintMode="add"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="98dp"
+            android:layout_marginTop="330dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="161dp"
+            android:layout_height="46dp"
+            android:background="#F6CA47"
+            android:backgroundTint="#F6CA47"
+            android:text="Iniciar Sesión"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="124dp"
+            android:layout_marginTop="424dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
