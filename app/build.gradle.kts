@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -43,4 +44,11 @@ dependencies {
     //Material3
 
     implementation("com.google.android.material:material:1.11.0")
+
+    // Firebase
+
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-firestore:24.11.0") // Cloud Firestore
+
 }
