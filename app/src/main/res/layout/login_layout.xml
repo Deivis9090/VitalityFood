@@ -20,16 +20,17 @@
             android:layout_width="382dp"
             android:layout_height="740dp"
             android:backgroundTint="#0E4C10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/fndpi"
-            tools:layout_editor_absoluteX="-36dp"
             tools:layout_editor_absoluteY="-36dp" />
 
         <EditText
             android:id="@+id/editTextText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="99dp"
-            android:layout_marginTop="184dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginTop="252dp"
             android:backgroundTint="#CCC26B"
             android:backgroundTintMode="add"
             android:ems="10"
@@ -41,8 +42,8 @@
             android:id="@+id/editTextTextPassword2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="98dp"
-            android:layout_marginTop="330dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginTop="376dp"
             android:backgroundTint="#CCC26B"
             android:backgroundTintMode="add"
             android:ems="10"
@@ -50,17 +51,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Spinner
+            android:id="@+id/typeSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnLogin"
             android:layout_width="161dp"
             android:layout_height="46dp"
-            android:layout_marginLeft="124dp"
-            android:layout_marginTop="424dp"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="544dp"
             android:background="#F6CA47"
             android:backgroundTint="#F6CA47"
             android:text="Iniciar Sesión"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
