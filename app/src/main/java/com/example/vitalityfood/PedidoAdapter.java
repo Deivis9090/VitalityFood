@@ -10,23 +10,23 @@ import java.util.List;
 
 
 public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoViewHolder> {
-    private List<String> orderList;
+    private List<Pedido> orderList;
 
-    public PedidoAdapter(List<String> orderList) {
+    public PedidoAdapter(List<Pedido> orderList) {
         this.orderList = orderList;
     }
 
     @NonNull
     @Override
     public PedidoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.barra_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pedido, parent, false);
         return new PedidoViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PedidoViewHolder holder, int position) {
-        String order = orderList.get(position);
-        holder.bind(order);
+        Pedido pedido = orderList.get(position);
+        holder.bind(pedido);
     }
 
     @Override
@@ -35,16 +35,18 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
     }
 
     public static class PedidoViewHolder extends RecyclerView.ViewHolder {
-
         private TextView textViewPedido;
 
         public PedidoViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewPedido = itemView.findViewById(R.id.recyclerViewPedidos);
+            textViewPedido = itemView.findViewById(R.id.textViewPedido);
         }
 
-        public void bind(String order) {
-            textViewPedido.setText(order);
+        public void bind(Pedido pedido) {
+            // Aquí configuras los datos del pedido en las vistas
+            String orderDetails = "Mesa: " + pedido.getId_mesa() + ", Status: " + pedido.getStatus();
+            textViewPedido.setText(orderDetails);
         }
     }
 }
+
