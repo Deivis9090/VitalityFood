@@ -1,5 +1,7 @@
 package com.example.vitalityfood;
 
+
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,45 +10,44 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-
 public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoViewHolder> {
-    private List<Pedido> orderList;
 
-    public PedidoAdapter(List<Pedido> orderList) {
-        this.orderList = orderList;
+    private Context context;
+    private List<Pedido> pedidoList;
+
+    public PedidoAdapter(Context context, List<Pedido> pedidoList) {
+        this.context = context;
+        this.pedidoList = pedidoList;
     }
 
     @NonNull
     @Override
     public PedidoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pedido, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_pedido, parent, false);
         return new PedidoViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PedidoViewHolder holder, int position) {
-        Pedido pedido = orderList.get(position);
-        holder.bind(pedido);
+        Pedido pedido = pedidoList.get(position);
+        holder.textViewNombre.setText(pedido.getNombre());
+        holder.textViewPrecio.setText(String.valueOf(pedido.getPrecio()));
+        holder.textViewStatus.setText(pedido.getStatus()); // Establecer el estado del pedido
     }
 
     @Override
     public int getItemCount() {
-        return orderList.size();
+        return pedidoList.size();
     }
 
     public static class PedidoViewHolder extends RecyclerView.ViewHolder {
-        private TextView textViewPedido;
+        TextView textViewNombre, textViewPrecio, textViewStatus;
 
         public PedidoViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewPedido = itemView.findViewById(R.id.textViewPedido);
-        }
-
-        public void bind(Pedido pedido) {
-            // Aquí configuras los datos del pedido en las vistas
-            String orderDetails = "Mesa: " + pedido.getId_mesa() + ", Status: " + pedido.getStatus();
-            textViewPedido.setText(orderDetails);
+            textViewNombre = itemView.findViewById(R.id.textViewNombre);
+            textViewPrecio = itemView.findViewById(R.id.textViewPrecio);
+            textViewStatus = itemView.findViewById(R.id.textViewStatus); // Obtener referencia del TextView del estado del pedido
         }
     }
 }
-
