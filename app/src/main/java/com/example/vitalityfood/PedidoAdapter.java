@@ -19,7 +19,7 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
     @NonNull
     @Override
     public PedidoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pedido, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.barra_layout, parent, false);
         return new PedidoViewHolder(view);
     }
 
@@ -40,7 +40,7 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
 
         public PedidoViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewPedido = itemView.findViewById(R.id.textViewPedido);
+            textViewPedido = itemView.findViewById(R.id.recyclerViewPedidos);
         }
 
         public void bind(String order) {
