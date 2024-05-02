@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-
         tools:context=".OrdenarActivity">
         <LinearLayout
             android:layout_width="wrap_content"
@@ -26,61 +25,141 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/specialmains"
                 android:layout_gravity="center_horizontal"/>
-            <TextView
-                android:id="@+id/tv_salmon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SALMON A LA PARRILLA\n CON ESPARRAGOS AL VAPOR"
-                android:padding="8dp"
-                android:textColor="#000000"/>
-            <TableLayout
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TableRow>
-                    <Button
-                        android:id="@+id/btnIncrement"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"/>
-
-                    <Button
-                        android:id="@+id/btnDecrement"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_below="@id/btnIncrement"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"/>
-
-                    <TextView
-                        android:id="@+id/tvCounter"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textSize="24sp"
-                        android:layout_below="@id/btnDecrement"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"/>
-                </TableRow>
-            </TableLayout>
-
-            <TextView
-                android:id="@+id/tv_pollo"
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="POLLO AL CURRY CON ARROZ AL VAPOR"
-                android:padding="8dp"
-                android:textColor="#000000"/>
+                android:orientation="vertical"
+                android:background="#ffeccc"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/tv_salmon"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="SALMON A LA PARRILLA\n CON ESPARRAGOS AL VAPOR"
+                    android:padding="8dp"
+                    android:textColor="#000000"
+                    android:layout_gravity="center_horizontal"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                             />
 
-            <TextView
-                android:id="@+id/tv_bowl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="BOWL DE ARROZ INTEGRAL CON VEGETALES ASADOS"
-                android:padding="8dp"
-                android:textColor="#000000"/>
+                        <Button
+                            android:id="@+id/btnDecrement"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/tv_pollo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="POLLO AL CURRY \nCON ARROZ AL VAPOR"
+                    android:padding="8dp"
+                    android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement2"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement2"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement2"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/tv_bowl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BOWL DE ARROZ INTEGRAL\n CON VEGETALES ASADOS"
+                    android:padding="8dp"
+                    android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement3"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement3"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
+
+            </LinearLayout>
+
 
             <ImageView
                 android:id="@+id/OrganicSalads"
@@ -91,30 +170,137 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+
+                android:orientation="vertical"
+                android:background="#ffeccc"
+                android:layout_gravity="center_horizontal">
                 <TextView
                     android:id="@+id/tv_ensalada_verano"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ENSALADA VERDE DE VERANO"
+                    android:text="ENSALADA VERDE\n DE VERANO"
                     android:padding="8dp"
                     android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement4"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement4"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
 
                 <TextView
                     android:id="@+id/tv_ensalada_brocoli"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ENSALADA DE BROCOLI Y AMARANTO ORGANICA"
+                    android:text="ENSALADA DE BROCOLI \nY AMARANTO \nORGANICA"
                     android:padding="8dp"
                     android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement5"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement5"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
 
                 <TextView
                     android:id="@+id/tv_ensalada_quinoa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ENSALADA DE QUINOA Y VEGETALES ORGANICOS"
+                    android:text="ENSALADA DE QUINOA Y\n VEGETALES \nORGANICOS"
                     android:padding="8dp"
                     android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement6"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement6"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
+
+
 
             </LinearLayout>
             <ImageView
@@ -125,9 +311,139 @@
                 android:layout_gravity="center_horizontal"/>
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#ffeccc"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/agua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="AGUA DE FRUTAS \nINFUNDIDA"
+                    android:padding="8dp"
+                    android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement7"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
 
+                        <Button
+                            android:id="@+id/btnDecrement7"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/te"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TE HELADO \n DE \nFRUTAS"
+                    android:padding="8dp"
+                    android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement8"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement8"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/aguacoco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="AGUA DE \n COCO \nREFRESCANTE"
+                    android:padding="8dp"
+                    android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement9"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement9"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
             </LinearLayout>
+
+
+
             <ImageView
                 android:id="@+id/Desserts"
                 android:layout_width="wrap_content"
@@ -136,15 +452,237 @@
                 android:layout_gravity="center_horizontal"/>
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#ffeccc"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/fresas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FRESAS CON CREMA DE COCO\n"
+                    android:padding="8dp"
+                    android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement10"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
 
+                        <Button
+                            android:id="@+id/btnDecrement10"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/platanos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PLATANOS CON \nCHOCOLATE \nOSCURO"
+                    android:padding="8dp"
+                    android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement11"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement11"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/galleta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="GALLETA DE AVENA \n Y \nPLATANO"
+                    android:padding="8dp"
+                    android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement12"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement12"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
             </LinearLayout>
+
+
+
+
             <ImageView
                 android:id="@+id/Soups"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/soups"
                 android:layout_gravity="center_horizontal"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#ffeccc"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/sopa1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SOPA DE GUISANTES \n VERDES"
+                    android:padding="8dp"
+                    android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement13"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement13"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/sopa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SOPA DE \nTOMATE"
+                    android:padding="8dp"
+                    android:textColor="#000000"/>
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/btnIncrement14"
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/aum"
+                            android:backgroundTint="@android:color/transparent"/>
+                        <TextView
+                            android:id="@+id/tvCounter14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:layout_below="@id/btnDecrement"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="bold"
+                            />
+
+                        <Button
+                            android:id="@+id/btnDecrement14"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnIncrement"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/dis"
+                            android:backgroundTint="@android:color/transparent"/>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
 
         </LinearLayout>
     </LinearLayout>
