@@ -84,13 +84,17 @@ public class LoginActivity extends AppCompatActivity {
                                                 // Contraseña coincidente, permitir acceso a la siguiente pantalla
                                                 if (typeSelected.equals("Barra")) {
                                                     startActivity(new Intent(LoginActivity.this, BarraActivity.class));
-                                                } else {
+                                                }
+                                                if(typeSelected.equals("Cliente")){
+                                                    startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+                                                }else {
                                                     startActivity(new Intent(LoginActivity.this, MenuActivity.class));
                                                 }
                                                 Toast.makeText(LoginActivity.this, "Iniciando...", Toast.LENGTH_SHORT).show();
                                                 finish(); // Finaliza la actividad actual para evitar que el usuario regrese aquí usando el botón "Atrás"
                                                 return;
                                             }
+
                                         }
                                         // Si llegamos aquí, no se encontró un usuario con los datos proporcionados
                                         Toast.makeText(LoginActivity.this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show();
