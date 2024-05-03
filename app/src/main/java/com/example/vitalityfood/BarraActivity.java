@@ -1,27 +1,27 @@
 package com.example.vitalityfood;
 
-
-import static android.content.ContentValues.TAG;
-
 import android.os.Bundle;
 import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class BarraActivity extends AppCompatActivity {
-  private RecyclerView recyclerViewPedidos;
+
+    private static final String TAG = "BarraActivity";
+
+    private RecyclerView recyclerViewPedidos;
     private PedidoAdapter pedidoAdapter;
     private List<Pedido> pedidoList;
     private FirebaseFirestore db;
@@ -32,15 +32,20 @@ public class BarraActivity extends AppCompatActivity {
         setContentView(R.layout.barra_layout);
 
         recyclerViewPedidos = findViewById(R.id.recyclerViewPedidos);
+        recyclerViewPedidos.setHasFixedSize(true);
         recyclerViewPedidos.setLayoutManager(new LinearLayoutManager(this));
 
         pedidoList = new ArrayList<>();
-        pedidoAdapter = new PedidoAdapter(this, pedidoList);
-        recyclerViewPedidos.setAdapter(pedidoAdapter);
+        pedidoAdapter = new PedidoAdapter(this, pedidoList); // Inicializa el adaptador aquí
+        recyclerViewPedidos.setAdapter(pedidoAdapter); // Configura el RecyclerView con el adaptador
 
         db = FirebaseFirestore.getInstance();
 
-        // Accede a la colección 'orden'
+        // Realizar consulta para obtener los pedidos
+        obtenerPedidos();
+    }
+
+    private void obtenerPedidos() {
         db.collection("orden")
                 .document("01")
                 .collection("bebida")
@@ -50,16 +55,25 @@ public class BarraActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot document : task.getResult()) {
-                                // Obtén los datos de cada documento y agrega un nuevo Pedido a la lista
-                                String nombre = document.getString("nombre");
-                                double precioUnitario = document.getDouble("precio_unitario");
-                                String status = document.getString("status");
-                                pedidoList.add(new Pedido(nombre, precioUnitario, status));
+                                // Obtén el valor del campo precio_unitario
+                                Object precioUnitarioObj = document.get("precio_unitario");
+                                // Verifica si el valor es numérico
+                                if (precioUnitarioObj instanceof Number) {
+                                    // Convierte el valor en un double
+                                    double precioUnitario = ((Number) precioUnitarioObj).doubleValue();
+                                    // Haz lo que necesites con el precio
+                                    // Por ejemplo, agrega un nuevo Pedido a la lista
+                                    String nombre = document.getString("nombre");
+                                    pedidoList.add(new Pedido(nombre, precioUnitario));
+                                } else {
+                                    // Maneja el caso en el que el valor no sea numérico
+                                    Log.e(TAG, "El campo precio_unitario no es un número válido en el documento " + document.getId());
+                                }
                             }
                             // Notifica al adaptador que los datos han cambiado
                             pedidoAdapter.notifyDataSetChanged();
                         } else {
-                            Log.w(TAG, "Error getting documents.", task.getException());
+                            Log.w(TAG, "Error obteniendo documentos.", task.getException());
                         }
                     }
                 });

@@ -47,7 +47,9 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
             super(itemView);
             textViewNombre = itemView.findViewById(R.id.textViewNombre);
             textViewPrecio = itemView.findViewById(R.id.textViewPrecio);
-            textViewStatus = itemView.findViewById(R.id.textViewStatus); // Obtener referencia del TextView del estado del pedido
+            textViewStatus = itemView.findViewById(R.id.textViewStatus);
         }
     }
 }
+
+
