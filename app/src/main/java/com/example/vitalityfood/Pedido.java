@@ -5,7 +5,7 @@ public class Pedido {
     private double precio;
     private String status;
 
-    public Pedido(String nombre, double precio) {
+    public Pedido(String nombre, double precio, String status) {
         this.nombre = nombre;
         this.precio = precio;
         this.status = status;

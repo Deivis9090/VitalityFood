@@ -57,17 +57,17 @@ public class BarraActivity extends AppCompatActivity {
                             for (DocumentSnapshot document : task.getResult()) {
                                 // Obtén el valor del campo precio_unitario
                                 Object precioUnitarioObj = document.get("precio_unitario");
-                                // Verifica si el valor es numérico
-                                if (precioUnitarioObj instanceof Number) {
-                                    // Convierte el valor en un double
+                                Object statusObj = document.get("status");
+
+                                // Por ejemplo, agrega un nuevo Pedido a la lista
+                                String nombre = document.getString("nombre");
+                                if (precioUnitarioObj != null && statusObj != null) {
                                     double precioUnitario = ((Number) precioUnitarioObj).doubleValue();
-                                    // Haz lo que necesites con el precio
-                                    // Por ejemplo, agrega un nuevo Pedido a la lista
-                                    String nombre = document.getString("nombre");
-                                    pedidoList.add(new Pedido(nombre, precioUnitario));
+                                    String status = (String) statusObj;
+                                    pedidoList.add(new Pedido(nombre, precioUnitario, status));
                                 } else {
-                                    // Maneja el caso en el que el valor no sea numérico
-                                    Log.e(TAG, "El campo precio_unitario no es un número válido en el documento " + document.getId());
+                                    // Maneja el caso en el que el valor de precio_unitario o status sea nulo
+                                    Log.e(TAG, "El campo precio_unitario o status es nulo en el documento " + document.getId());
                                 }
                             }
                             // Notifica al adaptador que los datos han cambiado
