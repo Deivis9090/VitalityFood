@@ -80,14 +80,16 @@ public class LoginActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         for (QueryDocumentSnapshot document : task.getResult()) {
                                             String passwordDB = document.getString("pass");
+                                            String userRole = document.getString("role");
                                             if (passwordDB.equals(passDB)) {
                                                 // Contraseña coincidente, permitir acceso a la siguiente pantalla
-                                                if (typeSelected.equals("Barra")) {
+                                                if (userRole.equals("Barra")) {
                                                     startActivity(new Intent(LoginActivity.this, BarraActivity.class));
-                                                }
-                                                if(typeSelected.equals("Cliente")){
+                                                } else if (userRole.equals("Cliente")) {
                                                     startActivity(new Intent(LoginActivity.this, MenuActivity.class));
-                                                }else {
+                                                } else if (userRole.equals("Cocina")) {
+                                                    startActivity(new Intent(LoginActivity.this, CocinaActivity.class));
+                                                } else {
                                                     startActivity(new Intent(LoginActivity.this, MenuActivity.class));
                                                 }
                                                 Toast.makeText(LoginActivity.this, "Iniciando...", Toast.LENGTH_SHORT).show();
@@ -112,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }
 

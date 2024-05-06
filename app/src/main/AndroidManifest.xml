@@ -30,6 +30,9 @@
         <activity
             android:name=".BarraActivity"
             android:exported="true"></activity>
+        <activity
+            android:name=".CocinaActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
