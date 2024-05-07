@@ -80,13 +80,23 @@ public class LoginActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         for (QueryDocumentSnapshot document : task.getResult()) {
                                             String passwordDB = document.getString("pass");
+                                            String userRole = document.getString("role");
                                             if (passwordDB.equals(passDB)) {
                                                 // Contraseña coincidente, permitir acceso a la siguiente pantalla
-                                                startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+                                                if (userRole.equals("Barra")) {
+                                                    startActivity(new Intent(LoginActivity.this, BarraActivity.class));
+                                                } else if (userRole.equals("Cliente")) {
+                                                    startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+                                                } else if (userRole.equals("Cocina")) {
+                                                    startActivity(new Intent(LoginActivity.this, CocinaActivity.class));
+                                                } else {
+                                                    startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+                                                }
                                                 Toast.makeText(LoginActivity.this, "Iniciando...", Toast.LENGTH_SHORT).show();
                                                 finish(); // Finaliza la actividad actual para evitar que el usuario regrese aquí usando el botón "Atrás"
                                                 return;
                                             }
+
                                         }
                                         // Si llegamos aquí, no se encontró un usuario con los datos proporcionados
                                         Toast.makeText(LoginActivity.this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show();
@@ -97,15 +107,14 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             });
 
-                }
-                else {
-
+                } else {
                     Toast.makeText(getApplicationContext(),
-                            "Porfavor, selecciona un rol para Iniciar Sesion", Toast.LENGTH_SHORT).show();
-
+                            "Por favor, selecciona un rol para iniciar sesión", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
+
     }
 }
 
