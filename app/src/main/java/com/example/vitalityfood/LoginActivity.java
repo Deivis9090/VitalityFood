@@ -89,6 +89,8 @@ public class LoginActivity extends AppCompatActivity {
                                                     startActivity(new Intent(LoginActivity.this, MenuActivity.class));
                                                 } else if (userRole.equals("Cocina")) {
                                                     startActivity(new Intent(LoginActivity.this, CocinaActivity.class));
+                                                } else if (userRole.equals("Mesero")) {
+                                                    startActivity(new Intent(LoginActivity.this, MeseroActivity.class));
                                                 } else {
                                                     startActivity(new Intent(LoginActivity.this, MenuActivity.class));
                                                 }
